@@ -1,10 +1,10 @@
-package com.yeshua.forum.forum.controller.dto;
+package com.yeshua.forum.controller.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.yeshua.forum.forum.model.Topico;
+import com.yeshua.forum.model.Topico;
 
 public class TopicoDto {
 

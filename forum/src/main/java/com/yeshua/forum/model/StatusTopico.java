@@ -1,4 +1,4 @@
-package com.yeshua.forum.forum.model;
+package com.yeshua.forum.model;
 
 public enum StatusTopico {
 
