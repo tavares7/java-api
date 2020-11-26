@@ -3,6 +3,8 @@ package com.yeshua.forum.controller;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.yeshua.forum.controller.dto.TopicoDto;
 import com.yeshua.forum.controller.form.TopicoForm;
 import com.yeshua.forum.model.Topico;
@@ -38,7 +40,7 @@ public class TopicoController {
     }
 
     @PostMapping
-    public ResponseEntity<TopicoDto> cadastrar(@RequestBody TopicoForm form, UriComponentsBuilder urlBuilder) {
+    public ResponseEntity<TopicoDto> cadastrar(@RequestBody @Valid TopicoForm form, UriComponentsBuilder urlBuilder) {
         Topico topico = form.converter(cursoRepo);
         topicoRepo.save(topico);
         URI url = urlBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
