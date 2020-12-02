@@ -11,5 +11,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 @Configuration
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    }
 
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/topicos").permitAll()
+                .antMatchers(HttpMethod.GET, "/topicos/*").permitAll();
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+    }
 }
