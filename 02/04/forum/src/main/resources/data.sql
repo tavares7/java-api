@@ -1,7 +1,7 @@
 INSERT INTO USUARIO(nome, email, senha)
 VALUES(
         'Aluno',
-        'aluno@email.com',
+        'aluno@gmail.com',
         '$2a$10$puHHWDUawBG.OnGdEAtLDOCsaU7wGO/3cVIwp9LMFjcPKQEof2bmK'
     );
 INSERT INTO CURSO(nome, categoria)
