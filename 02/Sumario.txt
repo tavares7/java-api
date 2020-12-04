@@ -7,4 +7,8 @@ Spring Boot API Rest - Segurança da API, Cache e Monitoramento
 2.2 Utilizando cache
 2.4 Invalidando o cache
 2.6 Boas práticas no uso de cache
-3 - Protege a API com Spring Security e JWT
+3 - Proteção com Spring Security
+3.2 Habilitando o Spring Security
+3.4 Liberando acesso aos endpoints 
+3.6 Restringindo o acesso aos endpoints privados
+3.8 Autenticando o usuário
