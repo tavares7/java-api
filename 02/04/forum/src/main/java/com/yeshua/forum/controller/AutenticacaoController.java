@@ -3,6 +3,7 @@ package com.yeshua.forum.controller;
 import javax.validation.Valid;
 
 import com.yeshua.forum.config.security.TokenService;
+import com.yeshua.forum.controller.dto.TokenDto;
 import com.yeshua.forum.controller.form.LoginForm;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,15 +27,15 @@ public class AutenticacaoController {
     private TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity<?> autenticar(@RequestBody @Valid LoginForm form) {
-        UsernamePasswordAuthenticationToken dadosLogin = form.converter();
+    public ResponseEntity<TokenDto> autenticar(@RequestBody @Valid LoginForm form) {
         try {
+            UsernamePasswordAuthenticationToken dadosLogin = form.converter();
             Authentication authenticate = authManager.authenticate(dadosLogin);
             String token = tokenService.gerarToken(authenticate);
-            System.out.println(token);
-            return ResponseEntity.ok().build();
+            return ResponseEntity.ok(new TokenDto(token, "Bearer"));
         } catch (AuthenticationException e) {
             return ResponseEntity.badRequest().build();
         }
     }
+
 }
