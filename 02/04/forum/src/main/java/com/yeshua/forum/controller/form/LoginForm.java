@@ -1,9 +1,11 @@
 package com.yeshua.forum.controller.form;
 
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+
 public class LoginForm {
 
     private String email;
-    private String senha;
+private String senha;
 
     public String getEmail() {
         return email;
@@ -19,6 +21,10 @@ public class LoginForm {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public UsernamePasswordAuthenticationToken converter() {
+        return new UsernamePasswordAuthenticationToken(email, senha);
     }
 
 }
