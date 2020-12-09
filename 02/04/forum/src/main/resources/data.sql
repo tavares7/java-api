@@ -2,7 +2,7 @@ INSERT INTO USUARIO(nome, email, senha)
 VALUES(
         'Aluno',
         'aluno@gmail.com',
-        '$2a$10$puHHWDUawBG.OnGdEAtLDOCsaU7wGO/3cVIwp9LMFjcPKQEof2bmK'
+        '$2a$10$zEBhGp9m1RF6rD4y2mZkJOkBu7dFO15zBgWgQLhzDehbfEooWMhPy'
     );
 INSERT INTO CURSO(nome, categoria)
 VALUES('Spring Boot', 'Programação');

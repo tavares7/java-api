@@ -13,3 +13,7 @@ Spring Boot API Rest - Segurança da API, Cache e Monitoramento
 3.6 Restringindo o acesso aos endpoints privados
 3.8 Autenticando o usuário
 4 - Gerando token com JWT
+4.2 Por que autenticar via token
+4.3 Configurando autenticação Stateless
+4.5 Gerando tokens com JWT
+4.8 Retornando o token para o cliente
