@@ -1,5 +1,7 @@
 package com.yeshua.forum.config.security;
 
+import com.yeshua.forum.repository.IUsuarioRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +25,8 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private TokenService tokenService;
+    @Autowired
+    private IUsuarioRepository usuarioRepository;
 
     @Override
     @Bean
@@ -39,8 +43,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/topicos").permitAll()
                 .antMatchers(HttpMethod.POST, "/auth").permitAll().anyRequest().authenticated().and().csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().addFilterBefore(
-                        new AutenticacaoViaTokenFilter(tokenService), UsernamePasswordAuthenticationFilter.class);
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                .addFilterBefore(new AutenticacaoViaTokenFilter(tokenService, usuarioRepository),
+                        UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
