@@ -4,10 +4,24 @@ VALUES(
         'aluno@gmail.com',
         '$2a$10$zEBhGp9m1RF6rD4y2mZkJOkBu7dFO15zBgWgQLhzDehbfEooWMhPy'
     );
+INSERT INTO USUARIO(nome, email, senha)
+VALUES(
+        'Moderador',
+        'moderador@gmail.com',
+        '$2a$10$zEBhGp9m1RF6rD4y2mZkJOkBu7dFO15zBgWgQLhzDehbfEooWMhPy'
+    );
 INSERT INTO CURSO(nome, categoria)
 VALUES('Spring Boot', 'Programação');
 INSERT INTO CURSO(nome, categoria)
 VALUES('HTML 5', 'Front-end');
+INSERT INTO PERFIL (id, nome)
+VALUES (1, 'ROLE_ALUNO');
+INSERT INTO PERFIL (id, nome)
+VALUES (2, 'ROLE_MODERADOR');
+INSERT INTO USUARIO_PERFIS (usuario_id, perfis_id)
+VALUES (1, 1);
+INSERT INTO USUARIO_PERFIS (usuario_id, perfis_id)
+VALUES (2, 2);
 INSERT INTO TOPICO(
         titulo,
         mensagem,
